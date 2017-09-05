@@ -1,0 +1,39 @@
+/* mixins */
+
+@mixin arrow($direction) {
+    &::after {
+        content: "";
+        margin:0px 5px;
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    @if $direction==up {
+        &::after {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+    }
+     @if $direction==down {
+        &::after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        }
+    }
+    @if $direction==left {
+        &::after {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+        }
+    }
+    @if $direction==right {
+        &::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        }
+    }
+}
+
+
+

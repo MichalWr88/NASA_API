@@ -1,0 +1,59 @@
+/* font-style */
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: quote($font-name);
+        src: url($file-name + '.eot');
+        src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
+        url($file-name + '.woff') format('woff'),
+        url($file-name + '.ttf') format('truetype'),
+        url($file-name + '.svg##{$font-name}') format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+// @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal);  uzycie!
+
+/* color style */
+
+$color-1: lightgrey;
+$color-2: #1BE140;
+$color-3:#DF4C4C;
+
+
+body{
+    margin:0 auto;
+    width:100vw;
+    height:100%;
+    padding:0;
+}
+
+
+// body {
+//     background-color: nth($color, 1); //index od 1
+//     color: $color-text;
+//     width: map-get($width, body);
+// }
+
+/* media query */
+
+$breakpoints: ( "phone": 400px,
+"phone-wide": 480px,
+"phablet": 560px,
+"tablet-small": 640px,
+"tablet": 768px,
+"tablet-wide": 1024px,
+"desktop": 1248px,
+"desktop-wide": 1440px);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type==max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
