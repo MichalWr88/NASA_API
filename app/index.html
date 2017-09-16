@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>NASA API Challenge</title>
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body>
-<header class="page__header">
-	<h1 class="header__pageName">NASA API Challenge</h1>
-	<p class="header__desc">gallery NASA <br>
 
-	<a href="https://api.nasa.gov/index.html">NASA API</a>
-	</p>
-	<button class="header__start">Start</button>
-	
-</header>
-<main class="page__main">
-	<section class="gallery">
-		
-	</section>
-</main>
-<footer class="page__footer">
-	Michał Maleszewski 2017
-</footer>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+<body>
+    <div class="page__opening slide-in-elliptic-top-fwd" id="opening1">
+        <div class="opening__picture" id="opPicture1">
+            <h1 class="opening__pageName">NASA API Challenge</h1>
+            <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez API
+                <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a>
+            </p>
+            <button class="opening__start heartbeat">Open Gallery</button>
+        </div>
+        <div class="opening__description">
+            <p class="picture__autor">Autor: <span id="autor">JAkis tam jakis tam</span>
+            </p>
+            <p class="picture__title">Title: <span id="title">JAkis tam tytul</span>
+            </p>
+            <p class="picture__figure">opis zdjecia </p>
+        </div>
+    </div>
+    <main class="page__main">
+        <section class="gallery">
+            <ul class="gallery__list">
+            </ul>
+            <button class="gallery__load">load more</button>
+        </section>
+    </main>
+    <footer class="page__footer">
+        Michał Maleszewski 2017
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
