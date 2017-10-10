@@ -11,8 +11,7 @@
 }
 
 .opening__picture {
-    flex-basis:50%;
-    // width: 100%;
+    flex-basis: 50%; // width: 100%;
     box-sizing: border-box;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,71 +22,69 @@
     align-content: center;
     align-items: center;
 }
-.opening__pageName{
+
+.opening__pageName {
     text-align: center;
     color: $color-1;
-    padding:20px;
-    background-color:rgba(255,255,255,0.1);
-
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
-.opening__info{
-	text-align: center;
+
+.opening__info {
+    text-align: center;
     color: $color-2;
-    padding:20px;
-	background-color:rgba(0,0,0,0.5);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.opening__api{
-color:$color-3;
-text-decoration:none;
 
+.opening__api {
+    color: $color-3;
+    text-decoration: none;
 }
 
 // ----------------------------
+.opening__description {
 
-.opening__description{
-    
-    flex-basis:50%;
+    flex-basis: 50%;
     overflow: scroll;
     text-align: center;
-    padding:20px;
+    padding: 20px;
     color: $color-3;
 }
-.picture__autor{
 
-}
-.picture__title{
+.picture__autor {}
 
-}
-.picture__figure{
-	letter-spacing:2px;
-	line-height:1.4rem;
+.picture__title {}
 
+.picture__figure {
+    letter-spacing: 2px;
+    line-height: 1.4rem;
 }
-.opening__start{
-	position:relative;
+
+.opening__start {
+    position: relative;
     border: none;
-    height: 50px;
-    // width: 50px;
+    height: 50px; // width: 50px;
     color: $color-3;
-    background:transparent;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    cursor:pointer;
-     transition: width 2s;
-	&:after{
-		position:absolute;
-		content:'';
-		background-color:$color-1;
-		bottom:-1px;
-		width:0%;
-		height:1px;
-		left:0;
-		right:0;
-		margin:auto;
-		 transition: width 0.5s;
-	}
-    &:hover:after{
-		width:80%;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: width 2s;
+    &:after {
+        position: absolute;
+        content: '';
+        background-color: $color-1;
+        bottom: -1px;
+        width: 0%;
+        height: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: width 0.5s;
+    }
+    &:hover:after {
+        width: 80%;
     }
 }
 
