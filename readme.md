@@ -25,4 +25,3 @@ __Dodatkowo__
 
 2. Wykorzystaj technikę __preloadingu__ przy wyświetlaniu nowych elementów w galerii.
 
-## Pamiętaj o responsywności. Wybór czcionek, wygląd przycisków, wygląd galerii zależy od Ciebie - puść wodze fantazji!
