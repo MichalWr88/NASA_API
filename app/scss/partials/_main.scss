@@ -7,17 +7,31 @@ height:auto;
 
 }
 .gallery__list{
-
+padding:0;
 }
 .gallery__elem{
+	position:relative;
 	list-style-type:none;
-	width:100%;
-
+	cursor:pointer;
 }
 .elem__img{
 width:300px;
 height:auto;
 }
 .elem__figure{
+
+}
+.elem__title{
+	position:absolute;
+	left:5%;
+	right:5%;
+	top:5%;
+	bottom:5%;
+	background-color: rgba(0,0,0,0.5);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-size:25px;
 
 }

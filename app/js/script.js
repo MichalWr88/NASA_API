@@ -16,9 +16,12 @@ $(document).ready(function() {
 loadBtn.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
+
+    for (let i = 0; i < 5; i++) {
     let galleryElem = $('<li>',{
             class: 'gallery__Elem'
         }),
+
          dataRand = formatDate(randomDate());
          
 
@@ -30,9 +33,9 @@ loadBtn.on('click', function(event) {
                 src: data.url,
                 timeout: 5000
             });
-            console.log(imgElem);
+            // console.log(imgElem);
             galleryElem.append(imgElem);
-            console.log(data);
+            // console.log(data);
         })
         .fail(function(err) {
             console.log('error');
@@ -42,13 +45,9 @@ loadBtn.on('click', function(event) {
         });
             
         gallery.append(galleryElem);
+   
+    }
 }); 
-    // for (let i = 0; i < 1; i++) {
-    //     let galleryElem = $('<li>',{
-    //         class: 'gallery__Elem'
-    //     }),
-    //      dataRand = formatDate(randomDate());
-         
 
     // loadPicture(dataRand)
     // .done(function(data) {
@@ -78,11 +77,13 @@ loadBtn.on('click', function(event) {
         $(this).slideUp(500);
     });
 
-    // initBG(picture,figure,title,autor);
+    initBG(picture,figure,title,autor);
 
 
 });
 /*-------------------------------------------*/
+
+
 let loadPicture = (obj) => {
     let config = {
         url: `https://api.nasa.gov/planetary/apod?date=${obj}&api_key=pzXOn2yp335zmTjQ2lqolN8T5nFXtMUXXnr9hZc7`,
@@ -116,10 +117,10 @@ let initBG = function(header, desc, title, autor) {
 
 
 let randomDate = () => {
-    let startDate = new Date(2010, 0, 1).getTime();
-    let endDate = new Date(2017, 0, 1).getTime();
-    let spaces = (endDate - startDate);
-    let timestamp = Math.round(Math.random() * spaces);
+    let startDate = new Date(2010, 0, 1).getTime(),
+        endDate = new Date(2017, 0, 1).getTime(),
+        spaces = (endDate - startDate),
+        timestamp = Math.round(Math.random() * spaces);
     timestamp += startDate;
     return new Date(timestamp);
 }
