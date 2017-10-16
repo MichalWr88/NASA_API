@@ -1,19 +1,7 @@
 /* font-style */
 
-@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
-    @font-face {
-        font-family: quote($font-name);
-        src: url($file-name + '.eot');
-        src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
-        url($file-name + '.woff') format('woff'),
-        url($file-name + '.ttf') format('truetype'),
-        url($file-name + '.svg##{$font-name}') format('svg');
-        font-weight: $weight;
-        font-style: $style;
-    }
-}
-
-// @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal);  uzycie!
+$font-1: 'Oswald', sans-serif;
+$font-2: 'Roboto', sans-serif;
 
 /* color style */
 
@@ -25,6 +13,7 @@ $color-5:#012A42;
 
 
 body {
+    font-family: $font-1;
     margin: 0 auto;
     width: 100vw;
     height: 100%;

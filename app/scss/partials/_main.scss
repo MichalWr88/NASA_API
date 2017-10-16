@@ -8,15 +8,20 @@ height:auto;
 }
 .gallery__list{
 padding:0;
+display:flex;
+justify-content: center;
+flex-wrap:wrap;
+list-style-type:none;
 }
 .gallery__elem{
 	position:relative;
-	list-style-type:none;
 	cursor:pointer;
+	margin:10px;
 }
 .elem__img{
 width:300px;
 height:auto;
+margin:10px;
 }
 .elem__figure{
 
