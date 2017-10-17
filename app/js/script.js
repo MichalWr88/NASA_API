@@ -19,7 +19,7 @@ loadBtn.on('click', function(event) {
 
     for (let i = 0; i < 5; i++) {
     let galleryElem = $('<li>',{
-            class: 'gallery__Elem'
+            class: 'gallery__elem'
         }),
 
          dataRand = formatDate(randomDate());
@@ -30,11 +30,14 @@ loadBtn.on('click', function(event) {
             console.log("success");
             let imgElem = $('<img>',{
                 class:'elem__img',
-                src: data.url,
-                timeout: 5000
+                src: data.url
+            }),
+            imgtitle = $('<div>',{
+                class:'elem__title',
+                text: data.title
             });
             // console.log(imgElem);
-            galleryElem.append(imgElem);
+            galleryElem.append(imgElem).append(imgtitle);
             // console.log(data);
         })
         .fail(function(err) {
