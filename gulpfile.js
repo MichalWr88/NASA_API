@@ -52,7 +52,7 @@ gulp.task('serve', ['sass'], function() {
 
 
 /*-----------------------------------------------------------------*/
-gulp.watch([config.htmlin, config.jsin]['reload']);
+gulp.watch([config.htmlin, config.jsin],['reload']);
 gulp.watch(config.scssin, ['sass']);
 
 
@@ -107,7 +107,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     return gulp.src(config.jsin)
         .pipe(concat(config.jsoutname)) //nadanie nazwy pliku sconcatenowanu
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(config.jsout));
 });
 

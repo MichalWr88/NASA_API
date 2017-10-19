@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>NASA API Challenge</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto:400i" rel="stylesheet">
-      <!-- build:css -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- endbuild -->
+      <link href="css/style-min.css" rel="stylesheet">
+
 </head>
 
 <body>
 
 <!-- LOADER -->
 
-<div id="loader-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-labelledby="preloader__label">
+<div id="loader-wrapper" aria-labelledby="preloader__label" aria-valuemax="100" aria-valuemin="0" role="progressbar">
     <div class="load">
-      <hr/><hr/><hr/><hr/>
+      <hr><hr><hr><hr>
     </div>
     <span id="preloader__label" class="preloader__label">Trwa ładowanie strony</span>
 </div>
@@ -34,7 +33,7 @@
             <div class="opening__picture" id="opPicture1">
                 <h1 class="opening__pageName">NASA API Challenge</h1>
                 <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez
-                    <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a>
+                    <a href="https://api.nasa.gov/index.html" class="opening__api" title="page nasa api">NASA API</a>
                 </p>
                 <button class="btn fourth" id="openGallery">Open Gallery</button>
             </div>
@@ -48,7 +47,7 @@
         </section>
 
     <header class="page__header">
-        <a href="https://www.nasa.gov/"><img class="header__logo" src="./images/NASA_logo.svg" alt="logo nasa"></a>
+        <a href="https://www.nasa.gov/"><img alt="logo nasa" class="header__logo" src="./images/NASA_logo.svg"></a>
         <nav class="header__nav">
             <button class="nav__btn">Menu</button>
             <ul class="header__menu">
@@ -65,20 +64,19 @@
         <section class="gallery">
             <ul class="gallery__list">
             </ul>
-            <button class="gallery__load btn sixth">load more</button>
+            <button class="btn gallery__load sixth">load more</button>
         </section>
     </main>
     <footer class="page__footer">
         <p class="fotter__content">
             Michał Maleszewski 2017
         </p>
-        <img class="footer__img" src="./images/linkedin-plain.svg" alt="">
-        <img class="footer__img" src="./images/github-original.svg" alt="">
+        <img alt="" class="footer__img" src="./images/linkedin-plain.svg">
+        <img alt="" class="footer__img" src="./images/github-original.svg">
     </footer>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-       <!-- build:js -->
-    <script src="./js/script.js"></script>
-     <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="></script>
+       <script src="js/script-min.js"></script>
+
 <!--     <script>
         $('html').addClass('js');
     $(window).on('load', function() {

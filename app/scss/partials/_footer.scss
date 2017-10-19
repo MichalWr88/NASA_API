@@ -1,10 +1,14 @@
 /* FOOTER */
 .page__footer {
     // position:fixed;
-    z-index: 2;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:nowrap;
     background-color: red;
-    left: 0;
-    right: 0;
     text-align: center;
-    top: 0;
+}
+.footer__img{
+	width:20px;
+	margin:0 10px;
 }

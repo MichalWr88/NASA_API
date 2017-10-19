@@ -1,0 +1,70 @@
+// Basic Button Style
+// 
+$-color-5: #2ecc71;
+$red: #e74c3c;
+$blue: #3498db;
+$color-3: #f1c40f;
+$purple: #8e44ad;
+$turquoise: #1abc9c;
+// 
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $red;
+  border-radius: 0.6em;
+  color: $red;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  fon-family:$font-1;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}
+
+// BUTTON 4
+.fourth {
+  // background: $color-3;
+  border-color: $color-3;
+  color: #fff;
+  background: {
+    image: linear-gradient(45deg,$color-3 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  
+  &:hover {
+    background-position: 0;
+  }
+}
+
+.sixth {
+  border-radius: 3em;
+  border-color: $-color-5;
+  color: $-color-5;
+  background: {
+      image: linear-gradient(to bottom, transparent 50%, $-color-5 50%);
+      position: 0% 0%;
+      size: 210%;
+  }
+  transition: background 150ms ease-in-out, color 150ms ease-in-out;
+  
+  &:hover {
+    color: #fff;
+    background-position: 0 100%;
+  }
+}
