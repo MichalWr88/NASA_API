@@ -1,52 +1,55 @@
 // main style
-.page__main{
-width:100%;
-height:auto;
+.page__main {
+	padding-top:90px;
+    width: 100%;
+    height: auto;
+    background-color: $color-5;
 }
-.gallery{
-display:flex;
-justify-content:center;
-flex-direction:column;
-flex-wrap:nowrap;
-align-items:center;
-}
-.gallery__list{
-padding:0;
-display:flex;
-justify-content: center;
-flex-wrap:wrap;
-align-items:center;
-list-style-type:none;
-}
-.gallery__elem{
-	position:relative;
-	cursor:pointer;
-	margin:10px;
-	box-shadow: 0px 0px 5px 5px grey;
 
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
-.elem__img{
-width:300px;
-height:auto;
-margin:10px;
+
+.gallery__list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
 }
-.elem__figure{
 
+.gallery__elem {
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0px 0px 5px 5px grey;
 }
-.elem__title{
-	position:absolute;
-	left:5%;
-	right:5%;
-	top:5%;
-	bottom:5%;
-	text-shadow: 2px 2px 5px black;
-	letter-spacing:.2rem;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	text-align:center;
-	color:white;
-	font-size:25px;
 
+.elem__img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
 
+.elem__figure {}
+
+.elem__title {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    text-shadow: 2px 2px 5px black;
+    letter-spacing: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 25px;
 }

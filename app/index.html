@@ -6,64 +6,68 @@
     <title>NASA API Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto:400i" rel="stylesheet">
-      <!-- build:css -->
+    <!-- build:css -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- endbuild -->
 </head>
 
 <body>
-
-<!-- LOADER -->
-
-<div id="loader-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-labelledby="preloader__label">
-    <div class="load">
-      <hr/><hr/><hr/><hr/>
+    <!-- LOADER -->
+    <div id="loader-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-labelledby="preloader__label">
+        <div class="load">
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+        </div>
+        <span id="preloader__label" class="preloader__label">Trwa ładowanie strony</span>
     </div>
-    <span id="preloader__label" class="preloader__label">Trwa ładowanie strony</span>
-</div>
-
-<!-- /////////////////////////////////// -->
-
-
-
-
+    <!-- /////////////////////////////////// -->
+    <section class="page__opening slide-in-elliptic-top-fwd" id="opening">
+        <div class="opening__picture" id="opPicture1">
+            <h1 class="opening__pageName">NASA API Challenge</h1>
+            <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez
+                <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a>
+            </p>
+            <button class="btn fourth" id="openGallery">Open Gallery</button>
+        </div>
+        <div class="opening__description">
+            <p class="picture__autor">Autor: <span id="autor">Autor zdiecia</span>
+            </p>
+            <p class="picture__title">Title: <span id="title">JAkis tam tytul</span>
+            </p>
+            <p class="picture__figure">opis zdjecia </p>
+        </div>
+    </section>
+ 
+         <!--  PAGE HEADER -->
+        <header class="page__header">
+            <a href="https://www.nasa.gov/">
+                <img class="header__logo" src="./images/NASA_logo.svg" alt="logo nasa">
+            </a>
+            <nav class="header__nav">
+                <button class="btn nav__btn">Menu</button>
+                <ul class="header__menu">
+                    <li class="menu__elem"><a class="elem__link" href="/">Start</a></li>
+                    <li class="menu__elem"><a class="elem__link" href="https://www.nasa.gov/">nasa</a></li>
+                    <li class="menu__elem"><a class="elem__link" href="https://api.nasa.gov/index.html">nasa api</a></li>
+                    <li class="menu__elem"><a class="elem__link" href="https://maleszewski-michal.pl">Autor</a></li>
+                </ul>
+            </nav>
+        </header>
+           <!-- MAIN PAGE -->
     <main class="page__main">
-
-
-        <section class="page__opening slide-in-elliptic-top-fwd" id="opening">
-            <div class="opening__picture" id="opPicture1">
-                <h1 class="opening__pageName">NASA API Challenge</h1>
-                <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez
-                    <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a>
-                </p>
-                <button class="btn fourth" id="openGallery">Open Gallery</button>
-            </div>
-            <div class="opening__description">
-                <p class="picture__autor">Autor: <span id="autor">Autor zdiecia</span>
-                </p>
-                <p class="picture__title">Title: <span id="title">JAkis tam tytul</span>
-                </p>
-                <p class="picture__figure">opis zdjecia </p>
-            </div>
-        </section>
-
-    <header class="page__header">
-        <a href="https://www.nasa.gov/"><img class="header__logo" src="./images/NASA_logo.svg" alt="logo nasa"></a>
-        <nav class="header__nav">
-            <button class="nav__btn">Menu</button>
-            <ul class="header__menu">
-                <li><a href="#">Start</a></li>
-                <li><a href="#">nasa</a></li>
-                <li><a href="#">nasa api</a></li>
-                <li><a href="#">Autor</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
         <!-- GALLERY -->
         <section class="gallery">
             <ul class="gallery__list">
+                <script id="tmp1" type="text/x-">
+                    <li class="gallery__elem">
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                    </li>
+                </script>
             </ul>
             <button class="gallery__load btn sixth">load more</button>
         </section>
@@ -76,10 +80,10 @@
         <img class="footer__img" src="./images/github-original.svg" alt="">
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-       <!-- build:js -->
+    <!-- build:js -->
     <script src="./js/script.js"></script>
-     <!-- endbuild -->
-<!--     <script>
+    <!-- endbuild -->
+    <!--     <script>
         $('html').addClass('js');
     $(window).on('load', function() {
         $("#loader-wrapper").fadeOut();  

@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 let loadGallery = (gallery) => {
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         let galleryElem = $('<li>', {
                 class: 'gallery__elem'
             }),
@@ -75,7 +75,7 @@ let loadGallery = (gallery) => {
 
         loadPicture(dataRand)
             .done(function(data) {
-
+if(data.media_type == "image"){
                 console.log("success");
                 let imgElem = $('<img>', {
                         class: 'elem__img',
@@ -88,6 +88,8 @@ let loadGallery = (gallery) => {
                 // console.log(imgElem);
                 galleryElem.append(imgElem).append(imgtitle);
                 // console.log(data);
+}
+                
             })
             .fail(function(err) {
                 console.log('error');
@@ -101,6 +103,10 @@ let loadGallery = (gallery) => {
     }
 
 };
+
+let loadContent = () => {
+
+}
 
 let loadPicture = (obj) => {
     let config = {
@@ -160,5 +166,5 @@ $(window).on('load', function() {
     setTimeout(
         function() {
             $("#loader-wrapper").fadeOut();
-        }, 3000);
+        }, 2000);
 });
