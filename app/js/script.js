@@ -1,69 +1,70 @@
-$('html').addClass('js');
+/* FUNCTIONS */
 
-$(document).ready(function() {
+let randomDate = () => {
+    let startDate = new Date(2010, 0, 1).getTime(),
+        endDate = new Date(2017, 0, 1).getTime(),
+        spaces = (endDate - startDate),
+        timestamp = Math.round(Math.random() * spaces);
+    timestamp += startDate;
+    return new Date(timestamp);
+}
+let formatDate = (date) => {
+    let month = randomDate().getMonth() + 1;
+    let day = randomDate().getDate();
+    month = month < 10 ? '0' + month : month;
+    day = day < 10 ? '0' + day : day;
+    return String(date.getFullYear()) + '-' + month + '-' + day;
+}
+/* AJAX */
+let loadPicture = (num) => {
+    let config = {
+        url: `https://api.nasa.gov/planetary/apod?date=${num}&api_key=pzXOn2yp335zmTjQ2lqolN8T5nFXtMUXXnr9hZc7`,
+        type: 'GET'
+    };
 
+    return $.ajax(config)
+};
 
+/* OPENING CREATE */
+
+let opening = () => {
     // opening elements
     let opening = $('#opening'),
-        body = $('body'),
+        body= $('body'),
         picture = $('#opPicture1'),
-        description = $('.opening__description'),
+        startBtn = $('#openGallery'),
+        description = $('#description'),
         autor = $('#autor'),
+        hd = $('#hd'),
         title = $('#title'),
         figure = $('.picture__figure'),
-        startBtn = $('#openGallery');
-    // ---------------------------------
-    let gallery = $('.gallery__list'),
-        loadBtn = $('.gallery__load');
+        dataRand = formatDate(randomDate());
 
-    loadGallery(gallery);
+    loadPicture(dataRand)
+        .done(function(data) {
+            picture.css('background-image', 'url("' + data.url + '")');
+            figure.text(`${data.explanation}`);
+            title.text(`${data.title}`);
+            autor.text(`${data.copyright}`);
+            hd.attr('href', `${data.hdurl}`);
 
-    loadBtn.on('click', function(event) {
-        event.preventDefault();
-        /* Act on the event */
-        loadGallery(gallery);
-
-    });
-
-
-
-
-    // loadPicture(dataRand)
-    // .done(function(data) {
-    //         console.log("success");
-    //         let imgElem = $('<img>',{
-    //             class:'elem__img',
-    //             src: data.url
-    //         });
-    //         console.log(imgElem);
-    //         galleryElem.append(imgElem);
-    //         console.log(data);
-    //     })
-    //     .fail(function(err) {
-    //         console.log('error');
-    //     })
-    //     .always(function() {
-    //         console.log("complete");
-    //     });
-
-    //     gallery.append(galleryElem);
-    // }
-
-
-    startBtn.on('click', function(event) {
+         startBtn.on('click', function(event) {
         event.preventDefault();
         /* Act on the event */
         opening.slideUp(500);
         body.css('overflow', 'auto');
     });
+        })
+        .fail(function(err) {
+            console.log(err);
+        })
+        .always(function() {
+            console.log("complete");
+        });
+};
 
-    initBG(picture, figure, title, autor);
-
-
-});
-/*-------------------------------------------*/
-
-let loadGallery = (gallery) => {
+let loadGallery = () => {
+    let gallery = $('.gallery__list');
 
     for (let i = 0; i < 5; i++) {
 
@@ -72,6 +73,7 @@ let loadGallery = (gallery) => {
 
 
         loadPicture(dataRand)
+
             .done(function(data) {
                 if (data.media_type == "image") {
                     let galleryElem = $('<li>', {
@@ -96,6 +98,7 @@ let loadGallery = (gallery) => {
                     gallery.append(galleryElem);
                 }
 
+
             })
             .fail(function(err) {
                 console.log('error');
@@ -109,59 +112,33 @@ let loadGallery = (gallery) => {
 
 };
 
-let loadContent = () => {
-
-}
-
-let loadPicture = (obj) => {
-    let config = {
-        url: `https://api.nasa.gov/planetary/apod?date=${obj}&api_key=pzXOn2yp335zmTjQ2lqolN8T5nFXtMUXXnr9hZc7`,
-        type: 'GET'
-    };
-
-    return $.ajax(config)
-};
-
-let initBG = function(header, desc, title, autor) {
-
-    let dataRand = formatDate(randomDate());
-
-    loadPicture(dataRand)
-        .done(function(data) {
-            console.log("success");
-            console.log(data);
-            header.css('background-image', 'url("' + data.url + '")');
-            desc.text(`${data.explanation}`);
-            title.text(`${data.title}`);
-            autor.text(`${data.copyright} `);
-        })
-        .fail(function(err) {
-            console.log(err);
-        })
-        .always(function() {
-            console.log("complete");
-        });
-
-};
 
 
-let randomDate = () => {
-    let startDate = new Date(2010, 0, 1).getTime(),
-        endDate = new Date(2017, 0, 1).getTime(),
-        spaces = (endDate - startDate),
-        timestamp = Math.round(Math.random() * spaces);
-    timestamp += startDate;
-    return new Date(timestamp);
-}
-let formatDate = (date) => {
-    let month = randomDate().getMonth() + 1;
-    let day = randomDate().getDate();
-    month = month < 10 ? '0' + month : month;
-    day = day < 10 ? '0' + day : day;
-    return String(date.getFullYear()) + '-' + month + '-' + day;
-}
+// ------------------------------------------------------//
 
 
+$('html').addClass('js');
+
+$(document).ready(function() {
+
+    loadGallery();
+
+    let loadBtn = $('.gallery__load');
+    loadBtn.on('click', function(event) {
+        event.preventDefault();
+        $("#loader-wrapper").fadeIn()
+        /* Act on the event */
+        $('html').addClass('js');
+        loadGallery();
+        $("#loader-wrapper").fadeOut();
+
+    });
+
+    opening();
+
+
+});
+/*-------------------------------------------*/
 
 
 

@@ -57,15 +57,33 @@
     text-align: justify;
     padding: 20px;
     color: $color-3;
+        @include media(">tablet") {
+        flex-basis: 100%;
+        // width: 100%;
+        overflow:auto;
+    }
 }
 
-.picture__autor {}
+.picture__autor {
+    margin:10px;
+    color:$color-1;
+    font-weight:bold;
+}
 
-.picture__title {}
+.picture__title {
+    margin:10px;
+    color:$color-1;
+    font-weight:bold;
+}
 
 .picture__figure {
     letter-spacing: 2px;
     line-height: 1.4rem;
+}
+.picture__hd {
+    text-decoration:none;
+    color:$color-1;
+    font-weight:bold;
 }
 
 .opening__start {

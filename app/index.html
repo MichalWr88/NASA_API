@@ -23,15 +23,19 @@
     <section class="page__opening slide-in-elliptic-top-fwd" id="opening">
         <div class="opening__picture" id="opPicture1">
             <h1 class="opening__pageName">NASA API Challenge</h1>
-            <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a></p><button class=
+            <p class="opening__info">Galeria zdjec z biblioteki NASA pobierana oprzez <a class="opening__api" href="https://api.nasa.gov/index.html" title="page nasa api">NASA API</a></p>
+            <button class=
             "btn fourth" id="openGallery">Open Gallery</button>
         </div>
-        <div class="opening__description">
-            <p class="picture__autor">Autor: <span id="autor">Autor zdiecia</span></p>
-            <p class="picture__title">Title: <span id="title">JAkis tam tytul</span></p>
+        <div class="opening__description" id="description">
+            <p >Autor: <span id="autor" class="picture__autor">Autor zdiecia</span></p>
+            <p >Title: <span id="title" class="picture__title">tytul zdiecia</span></p>
+            <a class="picture__hd" href="" target="_blank" id="hd">HD resolution</a>
             <p class="picture__figure">opis zdjecia</p>
         </div>
-    </section><!--  PAGE HEADER -->
+    </section>
+
+    <!--  PAGE HEADER -->
     <header class="page__header">
         <a href="https://www.nasa.gov/"><img alt="logo nasa" class="header__logo" src="./images/NASA_logo.svg"></a>
         <nav class="header__nav">
@@ -56,24 +60,29 @@
         <!-- GALLERY -->
         <script id="tmp1" type="text/x-handlebars-template">
             <!-- MODAL -->
-            <div>
-                <img src="" alt="">
-                <div>
-                    <h3>title</h3>
-                    <p>autor</p>
-                    <a href="" target="_blank">HD</a>
-                </div>
+            <div class="gallery__modal">
+                <img src={{src}} alt={{title}}>
+                    <h3>{{title}}</h3>
+                    <p>{{autor}}</p>
+                    <a href={{hd}} target="_blank">HD resolution</a>
+                    <p>{{description}}</p>
             </div>
         </script>
         <section class="gallery">
             <ul class="gallery__list">
-<!--                 <li>
-                    <div>
-                        <p>tytul</p>
-                        <p></p>
-                    </div>
-                    <img src="" alt="">
-                </li> -->
+        <script id="tmp1" type="text/x-handlebars-template">
+            <!-- MODAL -->
+            <li class="">
+                <figure class="snip1508">
+                  <img src="" alt="" />
+                  <figcaption>
+                    <h2>{{autor}}</h2>
+                    <p>{{description}}</p>
+                  </figcaption>
+                  <a href="{{modal}}"></a>
+                </figure>
+            </li>
+        </script>
             </ul>
             <button class="gallery__load btn sixth">load more</button>
         </section>
