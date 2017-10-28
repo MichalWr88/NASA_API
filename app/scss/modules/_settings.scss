@@ -1,43 +1,13 @@
-
-
-body {
+body,
+html {
     font-family: $font-1;
     margin: 0 auto;
     width: 100vw;
     height: 100%;
     padding: 0;
     overflow: hidden;
+    background-color: $color-5;
 }
-
-
-// body {
-//     background-color: nth($color, 1); //index od 1
-//     color: $color-text;
-//     width: map-get($width, body);
-// }
-
-/* media query */
-
-$breakpoints: ( "phone": 400px,
-"phone-wide": 480px,
-"phablet": 560px,
-"tablet-small": 640px,
-"tablet": 768px,
-"tablet-wide": 1024px,
-"desktop": 1248px,
-"desktop-wide": 1440px);
-@mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type==max {
-            $width: $width - 1px;
-        }
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
-    }
-}
-
 
 
 
@@ -46,6 +16,7 @@ $breakpoints: ( "phone": 400px,
 .heartbeat {
     animation: heartbeat 2.5s ease-in-out infinite both;
 }
+
 
 
 /* ----------------------------------------------

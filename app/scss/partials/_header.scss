@@ -1,58 +1,72 @@
 // headers style
-.page__header{
-	position:fixed;
-    display:flex;
-    justify-content:space-between;
-    flex-direction:row;
-    align-items:center;
-    padding:10px;
-    width:100%;
-    z-index:3;
-    background-color:$color-5;
-}
-.header__logo{
-    height:auto;
-    width:80px;
+.page__header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    z-index: 1;
+    background-color: $color-5;
 }
 
-.nav__btn{
-    padding:10px;
-    color:$color-2;
-    &:focus~.header__menu{
-    display:block;
+.header__logo {
+    height: auto;
+    width: 80px;
+}
+
+.nav__btn {
+    padding: 10px;
+    color: $color-2;
+    &:focus~.header__menu {
+        display: block;
+    }
+    @include media(">tablet") {
+        display: none;
     }
 }
-.header__nav{
-position:relative;
 
+.header__nav {
+    position: relative;
 }
 
-.header__menu{
-position:absolute;
-display:none;
-top:74px;
-right:0px;
-width:200px;
-    list-style-type:none;
-    padding:0;
-    background-color:$color-5;
+.header__menu {
+    position: absolute;
+    display: none;
+    top: 74px;
+    right: 0px;
+    width: 200px;
+    list-style-type: none;
+    padding: 0;
+    background-color: $color-5;
     translate: 0.5s;
-}
-.menu__elem{
-width:100%;
-}
-.elem__link{
 
-    text-align:center;
-    box-sizing:border-box;
-    display:block;
-    padding:10px 30px;
-    text-decoration:none;
-    text-transform:uppercase;
-    width:100%;
-    font-size:1.4rem;
-    color:$color-3;
-    &:hover{
-        background-color:rgba($color-2,0.5);
+    @include media(">tablet") {
+        display: flex;
+        justify-content:space-around;
+        position: static;
+        width:auto;
+
+    }
+}
+
+.menu__elem {
+    // width: 100%;
+}
+
+.elem__link {
+
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 1.4rem;
+    color: $color-3;
+    &:hover {
+        background-color: rgba($color-2, 0.5);
     }
 }

@@ -6,7 +6,7 @@ $(document).ready(function() {
     // opening elements
     let opening = $('#opening'),
         body = $('body'),
-    picture = $('#opPicture1'),
+        picture = $('#opPicture1'),
         description = $('.opening__description'),
         autor = $('#autor'),
         title = $('#title'),
@@ -66,30 +66,36 @@ $(document).ready(function() {
 let loadGallery = (gallery) => {
 
     for (let i = 0; i < 5; i++) {
-        let galleryElem = $('<li>', {
-                class: 'gallery__elem'
-            }),
 
-            dataRand = formatDate(randomDate());
+
+        let dataRand = formatDate(randomDate());
 
 
         loadPicture(dataRand)
             .done(function(data) {
-if(data.media_type == "image"){
-                console.log("success");
-                let imgElem = $('<img>', {
-                        class: 'elem__img',
-                        src: data.url
-                    }),
-                    imgtitle = $('<div>', {
-                        class: 'elem__title',
-                        text: data.title
+                if (data.media_type == "image") {
+                    let galleryElem = $('<li>', {
+                        class: 'gallery__elem'
                     });
-                // console.log(imgElem);
-                galleryElem.append(imgElem).append(imgtitle);
-                // console.log(data);
-}
-                
+                    console.log("success");
+                    let imgElem = $('<img>', {
+                            class: 'elem__img',
+                            src: data.hdurl
+                        }),
+                        imgtitle = $('<div>', {
+                            class: 'elem__title',
+                            text: data.title
+                        });
+                    imgElem.on('click', function() {
+                        $(this).css('width', '100%');
+                        console.log('test');
+                    });
+                    galleryElem.append(imgElem).append(imgtitle);
+                    // console.log(imgElem);
+                    // console.log(data);
+                    gallery.append(galleryElem);
+                }
+
             })
             .fail(function(err) {
                 console.log('error');
@@ -98,7 +104,6 @@ if(data.media_type == "image"){
                 console.log("complete");
             });
 
-        gallery.append(galleryElem);
 
     }
 
