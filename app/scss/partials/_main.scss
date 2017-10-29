@@ -63,17 +63,17 @@
 .snip1508 h2,
 .snip1508 h3 {
   font-family: 'Slabo 27px', serif;
-  line-height: 1.2em;
+  line-height: 2rem;
 }
 
 .snip1508 h2 {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   color: #35ADF9;
 }
 
 .snip1508 h3 {
   color: #EBEBEB;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: normal;
   letter-spacing: 1px;
 }
@@ -134,7 +134,6 @@
     position: relative;
     cursor: pointer;
     margin: 10px;
-    box-shadow: 0px 0px 5px 5px $color-4;
 }
 
 .elem__img {
