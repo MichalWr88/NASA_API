@@ -14,6 +14,12 @@ let formatDate = ( date ) => {
     day = day < 10 ? '0' + day : day;
     return String( date.getFullYear() ) + '-' + month + '-' + day;
 }
+
+let createModal = ( data ) =>{
+
+}
+
+
 /* AJAX */
 let loadPicture = ( num ) => {
     let config = {
@@ -35,6 +41,7 @@ let opening = () => {
         title = $( '#title' ),
         figure = $( '.picture__figure' ),
         dataRand = formatDate( randomDate() );
+
     loadPicture( dataRand ).done( function( data ) {
         console.log( data );
         picture.css( 'background-image', 'url("' + data.url + '")' );
@@ -68,7 +75,6 @@ let loadGallery = () => {
                     } ),
                     a = $( '<a>', {
                         href: data.hdurl,
-                        target: "_blank"
                     } ),
                     figcap = $( '<figcaption>', {} ),
                     img = $( '<img>', {
@@ -79,15 +85,43 @@ let loadGallery = () => {
                     } ),
                     galleryElem = $( '<div>', {
                         class: 'gallery__elem'
-                    } )
+                    } );
+
+                let modal = $('<div>',{
+                    class: 'gallery__modal'
+                });
+                modal.append($( '<img>', {
+                        src: data.url,
+                        class: 'modal__img'
+                    } ))
+                    .append($('<p>',{
+                    text:data.explanation,
+                    class: 'modal__desc'}))
+                    .append(button = $('<button>', {
+                    class: 'btn modal__close',
+                    text: 'x'
+                }));
+
+                a.on( 'click', function( event ) {
+                    event.preventDefault();
+                    /* Act on the event */
+                   modal.toggleClass('swing-in-top-bck');
+                   modal.removeClass('swing-in-bottom-bck');
+                   $('body').append(modal);
+                modal.on('click','button', function(event) {
+                    event.preventDefault();
+                    /* Act on the event */
+                    modal.toggleClass('swing-in-top-bck');
+                    modal.addClass('swing-in-bottom-bck');
+                    $(event.target).parent().delay(1000).queue(function() { $(this).remove(); });
+                   
+                });
+                } );
                 figcap.append( title ).append( desc );
                 fige.append( img ).append( figcap ).append( a );
                 galleryElem.append( fige );
                 gallery.append( galleryElem );
-                img.on( 'click', function( event ) {
-                    event.preventDefault();
-                    /* Act on the event */
-                } );
+                
             }
         } ).fail( function( err ) {
             console.log( 'error' );
@@ -99,7 +133,6 @@ let loadGallery = () => {
 // ------------------------------------------------------//
 $( document ).ready( function() {
     $( 'html' ).addClass( 'js' );
-    loadGallery();
     opening();
     let loadBtn = $( '.gallery__load' );
     loadBtn.on( 'click', function( event ) {
@@ -115,5 +148,6 @@ $( document ).ready( function() {
 $( window ).on( 'load', function() {
     setTimeout( function() {
         $( "#loader-wrapper" ).fadeOut();
+        loadGallery();
     }, 2000 );
 } );

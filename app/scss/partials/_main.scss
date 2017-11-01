@@ -2,7 +2,7 @@
 .page__main {
 	padding-top:90px;
     width: 100%;
-    height: auto;
+    min-height: auto;
     background-color: $color-5;
     margin:0 auto;
         @include media(">=desktop") {
@@ -12,7 +12,6 @@
 // 
  
 .snip1508 {
-  font-family: 'Lato', sans-serif;
   position: relative;
   float: left;
   overflow: hidden;
@@ -23,13 +22,12 @@
   color: #ffffff;
   text-align: left;
   font-size: 16px;
-  background-color: #1A1A1A;
+  // background-color: #1A1A1A;
 }
 
 .snip1508 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.45s ease;
   transition: all 0.45s ease;
 }
 
@@ -45,30 +43,35 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
   padding: 30px;
-  background-color: #202123;
+  // background-color: #202123;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  @include media("<=tablet") {
+    transform: translateX(0%);
+        }
+  // -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .snip1508 h2,
 .snip1508 h3,
 .snip1508 p {
   margin: 0;
+  pointer-events: none;
 }
 
-.snip1508 h2,
-.snip1508 h3 {
-  font-family: 'Slabo 27px', serif;
-  line-height: 2rem;
-}
+
 
 .snip1508 h2 {
   font-size: 1.9rem;
-  color: #35ADF9;
+  color: $color-4;
+  padding:5px;
+  background-color:rgba($color-3, 0.9);
+  text-align:center;
+      @include media("<=tablet") {
+     font-size: 1.1rem;
+        }
 }
 
 .snip1508 h3 {
@@ -79,7 +82,7 @@
 }
 
 .snip1508 p {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  // border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.9em;
   margin-top: 12px;
   padding: 12px 0 15px;
@@ -97,13 +100,10 @@
 
 .snip1508:hover > img,
 .snip1508.hover > img {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
 }
 
 .snip1508:hover figcaption,
 .snip1508.hover figcaption {
-  -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
 
@@ -116,7 +116,9 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-
+.gallery__header{
+  color:$color-1;
+}
 .gallery__list {
     padding: 0;
     display: flex;

@@ -1,11 +1,13 @@
 @import 'vendor/modernize';
 @import 'modules/colorsFonts';
-@import 'modules/mixins';
+@import 'modules/mediaquery';
+@import 'modules/animation';
 @import 'modules/settings';
 @import 'modules/buttons';
 
 @import 'partials/preloader';
 @import 'partials/header';
 @import 'partials/opening';
+@import 'partials/modal';
 @import 'partials/main';
 @import 'partials/footer';

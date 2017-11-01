@@ -66,7 +66,111 @@
     width: 100%;
     font-size: 1.4rem;
     color: $color-3;
-    &:hover {
-        background-color: rgba($color-2, 0.5);
-    }
+}
+// --------------------------------------------
+.snip1488 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.snip1488 * {
+  box-sizing: border-box;
+}
+.snip1488 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1em;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+}
+.snip1488 li:before,
+.snip1488 li:after {
+  display: block;
+}
+.snip1488 li:before {
+  bottom: 0%;
+}
+.snip1488 li:after {
+  bottom: 50%;
+}
+.snip1488 a {
+  backface-visibility: hidden;
+  display: block;
+  padding: 0.5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.snip1488 a:before {
+  bottom: 25%;
+}
+.snip1488 a:after {
+  bottom: 75%;
+}
+.snip1488 li:before,
+.snip1488 li:after,
+.snip1488 a:before,
+.snip1488 a:after {
+  background-color: $color-4;
+  position: absolute;
+  height: 25%;
+  left: 50%;
+  right: 50%;
+  content: '';
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.snip1488 li:before {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+.snip1488 li:after {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+.snip1488 a:before {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.snip1488 a:after {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.snip1488 li:hover:before,
+.snip1488 li.current:before,
+.snip1488 li:hover:after,
+.snip1488 li.current:after,
+.snip1488 li:hover a:before,
+.snip1488 li.current a:before,
+.snip1488 li:hover a:after,
+.snip1488 li.current a:after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.snip1488 li:hover:before,
+.snip1488 li.current:before {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.snip1488 li:hover:after,
+.snip1488 li.current:after {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.snip1488 li:hover a:before,
+.snip1488 li.current a:before {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.snip1488 li:hover a:after,
+.snip1488 li.current a:after {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
 }
