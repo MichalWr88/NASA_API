@@ -74,11 +74,12 @@ let loadGallery = () => {
                         text: ""
                     } ),
                     a = $( '<a>', {
-                        href: data.hdurl,
+                        // href: data.hdurl,
                     } ),
                     figcap = $( '<figcaption>', {} ),
                     img = $( '<img>', {
-                        src: data.url
+                        src: data.url,
+                        alt: data.title
                     } ),
                     fige = $( '<figure>', {
                         class: 'snip1508'
