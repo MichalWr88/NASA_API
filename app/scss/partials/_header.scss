@@ -8,7 +8,11 @@
     padding: 10px;
     width: 100%;
     z-index: 5;
+    box-sizing:border-box;
     background-color: $color-5;
+        @include media(">tablet") {
+        padding:10px 40px;
+    }
 }
 
 .header__logo {

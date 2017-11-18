@@ -42,6 +42,7 @@
     padding: 20px;
     font-family: $font-2;
     background-color: rgba(0, 0, 0, 0.8);
+
 }
 
 .opening__api {
@@ -51,7 +52,7 @@
 
 // ----------------------------
 .opening__description {
-
+    
     flex-basis: 50%;
     overflow: scroll;
     text-align: justify;
@@ -61,28 +62,34 @@
         flex-basis: 100%;
         // width: 100%;
         overflow:auto;
+         max-width:1200px;
+         font-size:1.2rem;
     }
 }
 
 .picture__autor {
     margin:10px;
-    color:$color-1;
+    color:$color-2;
     font-weight:bold;
 }
 
 .picture__title {
     margin:10px;
-    color:$color-1;
+    color:$color-2;
     font-weight:bold;
+   
 }
 
 .picture__figure {
-    letter-spacing: 2px;
-    line-height: 1.4rem;
+    letter-spacing: 1.2px;
+    line-height: 1.5rem;
+    @include media(">tablet") {
+        font-size:1.5rem;
+    }
 }
 .picture__hd {
     text-decoration:none;
-    color:$color-1;
+    color:$color-2;
     font-weight:bold;
 }
 

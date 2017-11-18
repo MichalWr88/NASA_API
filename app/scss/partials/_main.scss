@@ -1,110 +1,106 @@
 // main style
 .page__main {
-	padding-top:90px;
+    padding-top: 90px;
     width: 100%;
     min-height: auto;
     background-color: $color-5;
-    margin:0 auto;
-        @include media(">=desktop") {
-    max-width:1200px
-        }
+    margin: 0 auto;
+    @include media(">=desktop") {
+        max-width: 1200px
+    }
 }
+
 // 
- 
 .snip1508 {
-  position: relative;
-  float: left;
-  overflow: hidden;
-  margin: 10px 1%;
-  min-width: 230px;
-  max-width: 315px;
-  width: 100%;
-  color: #ffffff;
-  text-align: left;
-  font-size: 16px;
-  // background-color: #1A1A1A;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    font-size: 16px; // background-color: #1A1A1A;
 }
 
 .snip1508 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  transition: all 0.45s ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all 0.45s ease;
 }
 
 .snip1508 img {
-  vertical-align: top;
-  max-width: 100%;
-  backface-visibility: hidden;
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
 }
 
 .snip1508 figcaption {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 30px;
-  // background-color: #202123;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  @include media("<=tablet") {
-    transform: translateX(0%);
-        }
-  // -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px; // background-color: #202123;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    @include media("<=tablet") {
+        transform: translateX(0%);
+    } // -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .snip1508 h2,
 .snip1508 h3,
 .snip1508 p {
-  margin: 0;
-  pointer-events: none;
+    margin: 0;
+    pointer-events: none;
 }
 
 
 
 .snip1508 h2 {
-  font-size: 1.9rem;
-  color: $color-4;
-  padding:5px;
-  background-color:rgba($color-3, 0.9);
-  text-align:center;
-      @include media("<=tablet") {
-     font-size: 1.1rem;
-        }
+    font-size: 1.9rem;
+    color: $color-4;
+    padding: 5px;
+    background-color: rgba($color-3, 0.9);
+    text-align: center;
+    @include media("<=tablet") {
+        font-size: 1.1rem;
+    }
 }
 
 .snip1508 h3 {
-  color: #EBEBEB;
-  font-size: 1.3rem;
-  font-weight: normal;
-  letter-spacing: 1px;
+    color: #EBEBEB;
+    font-size: 1.3rem;
+    font-weight: normal;
+    letter-spacing: 1px;
 }
 
 .snip1508 p {
-  // border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.9em;
-  margin-top: 12px;
-  padding: 12px 0 15px;
-  line-height: 1.5em;
+    // border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9em;
+    margin-top: 12px;
+    padding: 12px 0 15px;
+    line-height: 1.5em;
 }
 
 .snip1508 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
-.snip1508:hover > img,
-.snip1508.hover > img {
-}
+.snip1508:hover>img,
+.snip1508.hover>img {}
 
 .snip1508:hover figcaption,
 .snip1508.hover figcaption {
-  transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 
@@ -116,9 +112,17 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-.gallery__header{
-  color:$color-1;
+
+.gallery__header {
+    color: $color-1;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    @include media(">tablet") {
+        font-size: 4rem;
+    }
 }
+
 .gallery__list {
     padding: 0;
     display: flex;
@@ -129,10 +133,10 @@
 }
 
 .gallery__elem {
-	display:flex;
-	flex-direction:column;
-	flex-wrap:nowrap;
-	justify-content:center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     position: relative;
     cursor: pointer;
     margin: 10px;
@@ -142,7 +146,7 @@
     width: 300px;
     height: auto;
     margin: 10px;
-    cursor:zoom-in;
+    cursor: zoom-in;
 }
 
 .elem__figure {}
@@ -162,5 +166,4 @@
     color: white;
     font-size: 25px;
     pointer-events: none;
-
 }
