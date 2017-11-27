@@ -15,10 +15,6 @@ let formatDate = ( date ) => {
     return String( date.getFullYear() ) + '-' + month + '-' + day;
 }
 
-let createModal = ( data ) =>{
-
-}
-
 
 /* AJAX */
 let loadPicture = ( num ) => {
