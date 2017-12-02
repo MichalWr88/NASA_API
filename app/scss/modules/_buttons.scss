@@ -1,19 +1,12 @@
 // Basic Button Style
-// 
-$-color-5: #2ecc71;
-$red: #e74c3c;
-$blue: #3498db;
-$color-3: #f1c40f;
-$purple: #8e44ad;
-$turquoise: #1abc9c;
-// 
+
 .btn {
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
-  border: 2px solid $red;
+  border: 2px solid $color-5;
   border-radius: 0.6em;
-  color: $red;
+  color: $color-5;
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -54,8 +47,8 @@ $turquoise: #1abc9c;
 
 .sixth {
   border-radius: 3em;
-  border-color: $-color-5;
-  color: $-color-5;
+  border-color: $color-5;
+  color: $color-5;
   background: {
       image: linear-gradient(to bottom, transparent 50%, $-color-5 50%);
       position: 0% 0%;

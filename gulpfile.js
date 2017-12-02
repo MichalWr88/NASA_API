@@ -22,12 +22,12 @@ var config = {
     app: 'app/',
     cssin: 'app/css/**/*.css',
     jsin: 'app/js/**/*.js',
-    imgin: 'app/img/**/*.{jpg,jpeg,png,gif}',
+    imgin: 'app/images/**/*.{jpg,jpeg,png,gif,svg}',
     htmlin: 'app/*.html',
     scssin: 'app/scss/**/*.scss',
     cssout: 'dist/css/',
     jsout: 'dist/js/',
-    imgout: 'dist/img/',
+    imgout: 'dist/imgages/',
     htmlout: 'dist/',
     scssout: 'app/css/',
     cssoutname: 'style-min.css',
@@ -52,7 +52,7 @@ gulp.task('serve', ['sass'], function() {
 
 
 /*-----------------------------------------------------------------*/
-gulp.watch([config.htmlin, config.jsin],['reload']);
+gulp.watch([config.htmlin, config.jsin], ['reload']);
 gulp.watch(config.scssin, ['sass']);
 
 
@@ -113,12 +113,12 @@ gulp.task('js', function() {
 
 // minimalize images------------------------------------------
 
-// gulp.task('img', function() {
-//   return gulp.src(config.imgin)
-//     .pipe(changed(config.imgout))
-//     .pipe(imagemin())
-//     .pipe(gulp.dest(config.imgout));
-// });
+gulp.task('img', function() {
+    return gulp.src(config.imgin)
+        .pipe(changed(config.imgout))
+        .pipe(imagemin())
+        .pipe(gulp.dest(config.imgout));
+});
 
 
 // run delete ---------------------------
@@ -129,7 +129,7 @@ gulp.task('clean', function() {
 // run sequence---------------------------
 
 gulp.task('build', function() {
-    sequence('clean', ['css', 'js', 'html']);
+    sequence('clean', ['css', 'js', 'html', 'img']);
 });
 
 

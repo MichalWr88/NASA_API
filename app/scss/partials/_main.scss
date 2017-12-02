@@ -21,7 +21,7 @@
     width: 100%;
     color: #ffffff;
     text-align: left;
-    font-size: 16px; // background-color: #1A1A1A;
+    font-size: 16px; 
 }
 
 .snip1508 * {
@@ -42,13 +42,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 30px; // background-color: #202123;
+    padding: 30px; 
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
     @include media("<=tablet") {
         transform: translateX(0%);
-    } // -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    } 
+    
 }
 
 .snip1508 h2,
@@ -79,7 +79,7 @@
 }
 
 .snip1508 p {
-    // border-top: 1px solid rgba(255, 255, 255, 0.2);
+
     font-size: 0.9em;
     margin-top: 12px;
     padding: 12px 0 15px;
