@@ -12,27 +12,43 @@ import { SharedModule } from './components/shared/shared.module';
 import { RestService } from './components/shared/rest.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { PlanetsComponent } from './components/planets/planets.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'gallery', component: ApodGalleryComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'planets', component: PlanetsComponent },
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: 'home',
     pathMatch: 'full',
-  },
+	},
+	{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, ApodGalleryComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    ApodGalleryComponent,
+    HomeComponent,
+    SearchComponent,
+    PlanetsComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MenuModule,
     TabMenuModule,
-		ProgressSpinnerModule,
+    ProgressSpinnerModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     AccordionModule,
     HttpClientModule,
