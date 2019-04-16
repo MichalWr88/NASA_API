@@ -1,0 +1,17 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "nasa",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "nasa",
+            "kebab-case"
+        ]
+    }
+}

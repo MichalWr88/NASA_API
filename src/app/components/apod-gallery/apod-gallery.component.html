@@ -1,0 +1,15 @@
+<h2>Gallery of astronomy Picture of the Day</h2>
+<section>
+	<p-progressSpinner *ngIf="_isLoading"></p-progressSpinner>
+
+	<figure *ngIf="!_isLoading">
+	<img src='{{figure.url}}' alt='' >
+	<img src='{{figure.hdurl}}' alt='' (load)="dosomething()">
+	<figcaption>{{figure.title}}</figcaption>
+	<figcaption>{{figure.explanation}}</figcaption>
+	<figcaption>{{figure.date}}</figcaption>
+	</figure>
+	<!-- <video src="../../../assets/images/Indonesia_2018-06.mp4" autoplay width="80%" height="50%">
+
+	</video> -->
+</section>
