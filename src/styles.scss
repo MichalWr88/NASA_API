@@ -8,6 +8,9 @@ $bg-color:#333333;
 $font-prim:'Oswald', sans-serif;
 $font-bold: 'Anton', sans-serif;
 $fontFamily:$font-prim;
+:root{
+	--color-bg-prim:#9E1617;
+}
 body, html{
 	margin:0;
 	width:100%;

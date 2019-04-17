@@ -1,0 +1,31 @@
+:host{
+	background-color: red;
+	min-width:250px;
+}
+.ui-menu {
+	padding: 5px;
+	width: 250px;
+	box-sizing: border-box;
+
+}
+.ui-menu .ui-menuitem-link{
+	padding:0.5em;
+	text-transform: uppercase;
+	&:hover{
+		background-color: #F9CC7F;
+	}
+}
+.ui-state-active {
+	color:white !important;
+	background-color: var(--color-bg-prim);
+}
+
+img {
+	width: auto;
+	height:60px;
+}
+figure {
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+}
