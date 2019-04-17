@@ -1,0 +1,31 @@
+:host{
+	height:100%;
+}
+.rectangle{
+	background-color: #F9CC7F;
+	position:absolute;
+	bottom:-8%;
+	left:-5%;
+	width:1300px;
+	height:700px;
+	transform: rotate(-40deg);
+		// background-blend-mode: multiply;
+}
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card{
+	position: relative;
+	width:800px;
+	height:500px;
+	background-color:var(--color-bg-prim);
+
+// border-radius: 100% 0% 35% 65% / 100% 68% 32% 0% ;
+// border-corner-shape:notch,
+}
