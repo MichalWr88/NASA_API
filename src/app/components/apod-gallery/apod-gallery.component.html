@@ -1,15 +1,20 @@
 <h2>Gallery of astronomy Picture of the Day</h2>
-<section>
-	<p-progressSpinner *ngIf="_isLoading"></p-progressSpinner>
+<ul>
+  <li *ngFor="let item of gallery; let i = index">
+    <section>
+      <p-progressSpinner *ngIf="!item.loaded"></p-progressSpinner>
 
-	<figure *ngIf="!_isLoading">
-	<img src='{{figure.url}}' alt='' >
-	<img src='{{figure.hdurl}}' alt='' (load)="dosomething()">
-	<figcaption>{{figure.title}}</figcaption>
-	<figcaption>{{figure.explanation}}</figcaption>
-	<figcaption>{{figure.date}}</figcaption>
-	</figure>
-	<!-- <video src="../../../assets/images/Indonesia_2018-06.mp4" autoplay width="80%" height="50%">
+      <figure [hidden]="item.loaded">
+        <img src="{{ item.url }}" alt="" />
 
-	</video> -->
-</section>
+        <img src="{{ item.hdurl }}" alt="" (load)="dosomething(i)" />
+        <figcaption>{{ item.title }}</figcaption>
+        <figcaption>{{ item.explanation }}</figcaption>
+        <figcaption>{{ item.date }}</figcaption>
+      </figure>
+      <!-- <video src="../../../assets/images/Indonesia_2018-06.mp4" autoplay width="80%" height="50%">
+		
+			</video> -->
+    </section>
+  </li>
+</ul>

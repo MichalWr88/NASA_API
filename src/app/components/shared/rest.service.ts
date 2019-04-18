@@ -41,8 +41,8 @@ export class RestService {
     );
   }
   randomDate(start = 2010, end = new Date().getFullYear()) {
-		const startDate = new Date(start, 0, 1).getTime(),
-			endDate = new Date(end, 0, 1).getTime(),
+    const startDate = new Date(start, 0, 1).getTime(),
+      endDate = new Date(end, 0, 1).getTime(),
       spaces = endDate - startDate;
     let timestamp = Math.round(Math.random() * spaces);
     timestamp += startDate;
