@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: ApodGalleryComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'planets', component: PlanetsComponent },
+  { path: 'mars', component: PlanetsComponent },
   {
     path: '',
     redirectTo: 'home',

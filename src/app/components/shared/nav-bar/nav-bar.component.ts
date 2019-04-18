@@ -18,11 +18,11 @@ export class NavBarComponent implements OnInit {
         icon: 'pi pi-home',
         routerLink: ['/gallery'],
       },
-      { label: 'Search', icon: 'pi pi-search', routerLink: ['/Search'] },
+      { label: 'Search', icon: 'pi pi-search', routerLink: ['/search'] },
       {
-        label: 'Planets',
+        label: 'Mars',
         icon: 'pi pi-globe',
-        routerLink: ['/planets'],
+        routerLink: ['/mars'],
       },
       {
         label: 'Nasa',
